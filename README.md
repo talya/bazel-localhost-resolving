@@ -14,7 +14,7 @@
   
   - bind to "localhost" - **passes**
 
-so, "localhost" fails to bind on mac, even though it should.
+so, "localhost" fails to bind in sandbox mode on mac, even though it should.
 seems related to the code from the [DarwinSandboxedSpawnRunner](https://github.com/bazelbuild/bazel/blob/2e4f703d361823fa12df9ddb57f21189743b2c74/src/main/java/com/google/devtools/build/lib/sandbox/DarwinSandboxedSpawnRunner.java#L312)
 ```
 if (!allowNetwork) {
