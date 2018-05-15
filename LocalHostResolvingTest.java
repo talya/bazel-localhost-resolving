@@ -16,4 +16,25 @@ public class LocalHostResolvingTest {
     		s.bind(address);
     		s.close();
 	}
+
+	@Test
+        public void shouldBindTolocalhost() throws InterruptedException, IOException {
+       		Socket s = new Socket();
+                String host = "localhost";
+                InetSocketAddress address = new InetSocketAddress(host, 0);
+                System.out.println("Address - " + address);
+                s.bind(address);
+                s.close();
+        }
+
+	@Test
+        public void shouldBindToAnyLocalHost() throws InterruptedException, IOException {
+                Socket s = new Socket();
+                String host = "0.0.0.0";
+                InetSocketAddress address = new InetSocketAddress(host, 0);
+                System.out.println("Address - " + address);
+                s.bind(address);
+                s.close();
+        }
+
 }
